@@ -6,19 +6,18 @@ using System.Collections;
 using Asset;
 using System;
 //Mohammad Al-Aarag
-
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("Hello User!");
+Console.ResetColor();
 List<Device> devices = new List<Device>();//create an object
 
 while (true)
 {
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine("Enter a new device!.");
-    Console.WriteLine("Which type of device do you want to enter. To enter a phone device press number 1 and for a computer press 2");
-    Console.ResetColor();
+   
     try
     {
         //input value from user to the list
+        Console.Write("Enter a new device type (Phone or computer): ");
         string TypeOfDevice = Console.ReadLine();
 
         Console.Write("Enter the brand name: ");
@@ -28,14 +27,12 @@ while (true)
         string model = Console.ReadLine();
 
         Console.Write("Enter the office name: ");
-        
         string office = Console.ReadLine();
 
         Console.Write("Enter the purchase date: ");
         string date = Console.ReadLine();
         DateTime purchaseDate = Convert.ToDateTime(date);
-
-
+           
         Console.Write("Enter the price in USD: ");
         int Price;
         while (!int.TryParse(Console.ReadLine(), out Price)) // read the price and make sure the input is a number     
@@ -65,6 +62,7 @@ while (true)
         Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("Please enter a valid value " + e);
         Console.ResetColor();
+        
 
     }
 
@@ -84,6 +82,7 @@ while (true)
     if (igen.ToLower().Trim() != "p")//check if the user want to put more values and start the program again if the user want to
     {
         break;
+        
     }
 
 
